@@ -25,37 +25,29 @@ function draw() {
         eyeSize += 1; // Increment eye size to make it grow
         let footSize = (1/5) * bodySize;
 
-        // body
+        // Draw the penguin
         fill(12, 13, 13);
-        ellipse(bodyX, bodyY, bodySize, 150);
+        ellipse(bodyX, bodyY, bodySize, 150); // Body
+        ellipse(bodyX, bodyY - 100, headSize, 90); // Head
 
-        // head
-        ellipse(bodyX, bodyY - 100, headSize, 90);
-
-        // face left
+        // Face
         fill(247, 244, 244);
-        ellipse(bodyX - 20, bodyY - 100, faceSize, faceSize);
+        ellipse(bodyX - 20, bodyY - 100, faceSize, faceSize); // Face left
+        ellipse(bodyX + 20, bodyY - 100, faceSize, faceSize); // Face right
 
-        // face right
-        fill(247, 244, 244);
-        ellipse(bodyX + 20, bodyY - 100, faceSize, faceSize);
-
-        // Draw eyes (grow indefinitely)
+        // Eyes
         fill(12, 13, 13);
-        ellipse(bodyX - 20, bodyY - 100, eyeSize, eyeSize);
-        ellipse(bodyX + 20, bodyY - 100, eyeSize, eyeSize);
+        ellipse(bodyX - 20, bodyY - 100, eyeSize, eyeSize); // Left eye
+        ellipse(bodyX + 20, bodyY - 100, eyeSize, eyeSize); // Right eye
 
-        // belly
+        // Belly
         fill(247, 244, 244);
-        ellipse(bodyX, bodyY + 20, bellySize, bellySize);
+        ellipse(bodyX, bodyY + 20, bellySize, bellySize); // Belly
 
-        // left foot
+        // Feet
         fill(221, 250, 5);
-        ellipse(bodyX - (1/6 * bodySize), bodyY + (1/2 * bodySize), footSize, footSize);
-
-        // right foot
-        fill(221, 250, 5);
-        ellipse(bodyX + (1/6 * bodySize), bodyY + (1/2 * bodySize), footSize, footSize);
+        ellipse(bodyX - (1/6 * bodySize), bodyY + (1/2 * bodySize), footSize, footSize); // Left foot
+        ellipse(bodyX + (1/6 * bodySize), bodyY + (1/2 * bodySize), footSize, footSize); // Right foot
     } else {
         // Reset the animation after 45 seconds
         bodySize = 160; // Reset body size
